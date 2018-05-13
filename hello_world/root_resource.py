@@ -1,3 +1,4 @@
+from jivago.templating.rendered_view import RenderedView
 from jivago.wsgi.annotations import Resource
 from jivago.wsgi.methods import GET
 
@@ -6,6 +7,5 @@ from jivago.wsgi.methods import GET
 class RootResource(object):
 
     @GET
-    def root_message(self) -> str:
-        return "Hello-World-as-a-Service, built using Jivago Framework v0.0.5."
-
+    def root_message(self) -> RenderedView:
+        return RenderedView("home.html", {})
